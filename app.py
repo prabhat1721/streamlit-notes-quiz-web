@@ -5,21 +5,6 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain.schema.runnable import RunnableParallel
 
-# --- Set your Hugging Face API Token ---
-# IMPORTANT: Replace "hf_YOUR_API_TOKEN" with your actual token.
-# For production, set this as an environment variable (e.g., in your shell or Streamlit Cloud secrets)
-# export HUGGINGFACEHUB_API_TOKEN="hf_YOUR_API_TOKEN"
-# Or directly in your script (less secure for sharing/production):
-
-
-
-# Replace this block in your app.py
-# if "HUGGINGFACEHUB_API_TOKEN" not in os.environ:
-#     st.error("HUGGINGFACEHUB_API_TOKEN environment variable not set.")
-#     st.markdown("Please set your Hugging Face API token as an environment variable or directly in the script.")
-#     st.stop() # Stop the app if the token is missing
-
-# Use st.secrets to securely get the API token
 if "HUGGINGFACEHUB_API_TOKEN" not in st.secrets:
     st.error("HUGGINGFACEHUB_API_TOKEN not found in Streamlit secrets.")
     st.markdown("Please add your Hugging Face API token to your Streamlit Cloud secrets.")
